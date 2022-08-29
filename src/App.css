@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap");
 body {
-  font-family: "Roboto Condensed";
+  font-family: "Roboto Condensed" !important;
 }
 .nav-navbar {
   width: 100%;
@@ -10,6 +10,9 @@ body {
   top: 0;
   padding: 20px 0px;
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+.topage-link a{
+  text-transform: uppercase;
 }
 .nav-navbr-inner {
   display: flex;
@@ -688,6 +691,7 @@ BANNER SECTION
   align-items: center;
   justify-content: center;
   padding: 20px;
+  margin-bottom: 60px;
 }
 .banner-heading{
   font-size: 30px;
@@ -799,13 +803,98 @@ FOOTER SECTION
 .footer{
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   height: 100%;
-  margin-top: 40px;
   padding: 30px 0px;
 }
 .rent-heading.mobile i{
   display: none;
 } 
+/* =================================
+CONTACT PAGE STYLING
+=====================================*/
+.contact-form-inner{
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  position: relative;
+  z-index: 5;
+}
+.contact-form-side{
+  flex: 1;
+}
+.contact-form-side h1{
+  text-transform: capitalize;
+  padding: 40px 0px 5px 0px;
+}
+.contact-form-side p{
+  text-transform: capitalize;
+  font-size: 15px;
+  color: #919191;
+  margin: 0px;
+}
+.contact-form{
+  margin: 30px 0px;
+}
+.contact-name{
+  display: flex;
+  align-items: center;
+ justify-content: space-between;
+}
+.contact-form-side input, .contact-form-side textarea{
+  width: 100%;
+  border: 1px solid #3f81ca;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.contact-form-side input:focus, .contact-form-side textarea:focus{
+  outline: none;
+}
+.input-name{
+  margin: 8px 0px !important;
+}
+.contact-form-pic{
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+.contact-form-pic img{
+  width: 100%;
+  height: 100%;
+}
+.btn-contact{
+  background: #3f81ca;
+  color: #fff;
+}
+.vid-mob{
+  display: none;
+}
 @media screen and (max-width: 768px) {
+  .contact{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .contact-form-side p, .contact-form-side h1{
+    color: #fff;
+  }
+  .vid-mob{
+    display: block;
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+    z-index: 4;
+  }
+  .contact-form-pic{
+    display: none;
+  }
+  .contact-name{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .contact-name-box{
+    width: 100%;
+  }
   .rent-heading.mobile i{
     display: block;
   } 

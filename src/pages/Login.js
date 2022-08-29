@@ -5,10 +5,10 @@ const Login = () => {
   const navigate = useNavigate();
   return (
     <div className="login">
-      <div class="box">
-        <div class="wave -one"></div>
-        <div class="wave -two"></div>
-        <div class="wave -three"></div>
+      <div className="box">
+        <div className="wave -one"></div>
+        <div className="wave -two"></div>
+        <div className="wave -three"></div>
       </div>
       <div className="login-text">
         <div className="container">
