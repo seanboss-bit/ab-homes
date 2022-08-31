@@ -11,7 +11,7 @@ body {
   padding: 20px 0px;
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
-.topage-link a{
+.topage-link a {
   text-transform: uppercase;
 }
 .nav-navbr-inner {
@@ -385,6 +385,7 @@ DASHBOARD PAGE
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 .pop-up-box {
   background-color: #fff;
@@ -393,7 +394,6 @@ DASHBOARD PAGE
   border-radius: 10px;
   overflow: hidden;
   overflow-y: scroll;
-  padding-bottom: 40px;
 }
 .pop-up-box::-webkit-scrollbar {
   display: none;
@@ -613,26 +613,26 @@ TAB STYLING
 /* =========================
 RATING SECTION
 ============================= */
-.rating-inner{
-  margin:90px 0px 40px 0px;
+.rating-inner {
+  margin: 90px 0px 40px 0px;
   overflow-x: scroll;
 }
-.rating-inner::-webkit-scrollbar{
- height: 1vw;
+.rating-inner::-webkit-scrollbar {
+  height: 1vw;
 }
-.rating-inner::-webkit-scrollbar-track{
+.rating-inner::-webkit-scrollbar-track {
   background: transparent;
 }
-.rating-inner::-webkit-scrollbar-thumb{
-  background: linear-gradient(to right , #2193b0, #6dd5ed);
+.rating-inner::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
   border-radius: 5px;
 }
-.rating-slider{
+.rating-slider {
   display: flex;
   align-items: center;
   width: 100%;
 }
-.rating-box{
+.rating-box {
   display: grid;
   grid-template-columns: 0fr 7fr;
   align-items: center;
@@ -644,48 +644,47 @@ RATING SECTION
   margin: 15px 10px;
   width: fit-content;
 }
-.rating-box p{
+.rating-box p {
   margin: 0px !important;
 }
-.rating-person{
+.rating-person {
   min-width: 300px;
 }
-.person{
+.person {
   display: flex;
   align-items: flex-start;
   gap: 20px;
- 
 }
-.person img{
+.person img {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 5px;
 }
-.person-inel p:first-child{
+.person-inel p:first-child {
   text-transform: capitalize;
   padding: 0px 0px 0px 0px;
   font-size: 20px;
 }
-.person-inel p:last-child{
+.person-inel p:last-child {
   text-transform: capitalize;
   color: #919191;
   font-size: 10px;
 }
-.rate{
+.rate {
   padding: 20px 0px 0px 0px;
   text-transform: capitalize;
   text-align: center;
   font-size: 19px;
   font-weight: 600;
 }
-.comments{
-  min-width:650px ;
+.comments {
+  min-width: 650px;
 }
 /* ========================
 BANNER SECTION 
 ===========================*/
-.banner-inner{
+.banner-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -693,7 +692,7 @@ BANNER SECTION
   padding: 20px;
   margin-bottom: 60px;
 }
-.banner-heading{
+.banner-heading {
   font-size: 30px;
   font-weight: bold;
   text-transform: capitalize;
@@ -702,14 +701,14 @@ BANNER SECTION
   margin-bottom: 20px;
   color: #2962ff;
 }
-.banner-text{
+.banner-text {
   max-width: 700px;
   text-align: center;
   font-size: 18px;
   color: #777;
   margin-bottom: 20px;
 }
-.banner-email{
+.banner-email {
   width: 100%;
   display: flex;
   align-items: center;
@@ -720,19 +719,19 @@ BANNER SECTION
   background-color: #fff;
   border-radius: 10px;
 }
-.banner-email input{
+.banner-email input {
   flex: 4;
   padding: 8px 0px;
   background: none;
   color: #777;
   border: none;
 }
-.banner-email input:focus{
+.banner-email input:focus {
   outline: none;
 }
-.banner-email button{
-  flex:1 ;
-  background: linear-gradient(to right, #fc4a1a,#f7b733);
+.banner-email button {
+  flex: 1;
+  background: linear-gradient(to right, #fc4a1a, #f7b733);
   border: none;
   text-transform: capitalize;
   color: #fff;
@@ -742,7 +741,7 @@ BANNER SECTION
   overflow: hidden;
   z-index: 1;
 }
-.banner-email button::before{
+.banner-email button::before {
   content: "";
   position: absolute;
   width: 0%;
@@ -753,130 +752,199 @@ BANNER SECTION
   transition: 0.5s ease-in-out;
   z-index: -1;
 }
-.banner-email button:hover::before{
+.banner-email button:hover::before {
   width: 100%;
 }
 /*==========================
 FOOTER SECTION 
 ============================*/
-.footer-inner{
+.footer-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.footer-logo{
+.footer-logo {
   display: flex;
   align-items: center;
   gap: 40px;
 }
-.footer-logo .summary{
-  margin:0px !important ;
+.footer-logo .summary {
+  margin: 0px !important ;
   max-width: 500px;
 }
-.footer-links{
+.footer-links {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
 }
-.foot-box .main a{ 
+.foot-box .main a {
   text-transform: capitalize;
   text-decoration: none;
   color: #2962ff;
 }
-.foot-box .main{
+.foot-box .main {
   margin-bottom: 20px;
 }
-.foot-others{
+.foot-others {
   display: flex;
   flex-direction: column;
 }
-.foot-others a{
+.foot-others a {
   text-decoration: none;
   text-transform: capitalize;
   padding: 10px 10px 10px 0px;
   color: #000;
 }
-.foot-others.icon{
+.foot-others.icon {
   flex-direction: row;
 }
-.footer{
+.footer {
   box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
   height: 100%;
   padding: 30px 0px;
 }
-.rent-heading.mobile i{
+.rent-heading.mobile i {
   display: none;
-} 
+}
 /* =================================
 CONTACT PAGE STYLING
 =====================================*/
-.contact-form-inner{
+.contact-form-inner {
   display: flex;
   align-items: flex-start;
   gap: 50px;
   position: relative;
   z-index: 5;
 }
-.contact-form-side{
+.contact-form-side {
   flex: 1;
 }
-.contact-form-side h1{
+.contact-form-side h1 {
   text-transform: capitalize;
   padding: 40px 0px 5px 0px;
 }
-.contact-form-side p{
+.contact-form-side p {
   text-transform: capitalize;
   font-size: 15px;
   color: #919191;
   margin: 0px;
 }
-.contact-form{
+.contact-form {
   margin: 30px 0px;
 }
-.contact-name{
+.contact-name {
   display: flex;
   align-items: center;
- justify-content: space-between;
+  justify-content: space-between;
 }
-.contact-form-side input, .contact-form-side textarea{
+.contact-form-side input,
+.contact-form-side textarea {
   width: 100%;
   border: 1px solid #3f81ca;
   padding: 10px 20px;
   border-radius: 5px;
 }
-.contact-form-side input:focus, .contact-form-side textarea:focus{
+.contact-form-side input:focus,
+.contact-form-side textarea:focus {
   outline: none;
 }
-.input-name{
+.input-name {
   margin: 8px 0px !important;
 }
-.contact-form-pic{
+.contact-form-pic {
   flex: 1;
   width: 100%;
   height: 100%;
 }
-.contact-form-pic img{
+.contact-form-pic img {
   width: 100%;
   height: 100%;
 }
-.btn-contact{
+.btn-contact {
   background: #3f81ca;
   color: #fff;
 }
-.vid-mob{
+.vid-mob {
   display: none;
 }
+/*=========================
+PRODUCT PAGE
+===========================  */
+.product-list-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 30px 0px;
+}
+.product-list-box {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  cursor: pointer;
+}
+.product-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.product-price-name p:first-child {
+  font-size: 25px;
+  color: #2962ff;
+  margin: 10px 0px !important;
+}
+.product-price-name p:last-child {
+  font-size: 30px;
+  text-transform: capitalize;
+  margin-bottom: 10px !important;
+}
+.product-price-name {
+  border-bottom: 1px solid #919191;
+  margin: 0px 20px;
+}
+.small-details {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 10px 20px;
+  padding: 6px 20px;
+}
+.small-details p {
+  text-transform: capitalize;
+  margin: 10px 0px !important;
+}
+.small-details i {
+  margin-right: 10px;
+}
+.property-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+}
+.property-button button {
+  border: none;
+  background: #3f81ca;
+  color: #fff;
+  width: 80%;
+  text-transform: capitalize;
+  padding: 10px 0px;
+  border-radius: 10px;
+}
 @media screen and (max-width: 768px) {
-  .contact{
+  .product-list-inner {
+    grid-template-columns: 1fr;
+  }
+  .contact {
     position: relative;
     width: 100%;
     height: 100%;
   }
-  .contact-form-side p, .contact-form-side h1{
+  .contact-form-side p,
+  .contact-form-side h1 {
     color: #fff;
   }
-  .vid-mob{
+  .vid-mob {
     display: block;
     position: absolute;
     height: 100%;
@@ -884,79 +952,79 @@ CONTACT PAGE STYLING
     width: 100%;
     z-index: 4;
   }
-  .contact-form-pic{
+  .contact-form-pic {
     display: none;
   }
-  .contact-name{
+  .contact-name {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
   }
-  .contact-name-box{
+  .contact-name-box {
     width: 100%;
   }
-  .rent-heading.mobile i{
+  .rent-heading.mobile i {
     display: block;
-  } 
+  }
   body {
     overflow-x: hidden !important;
   }
-  .showcase{
+  .showcase {
     height: fit-content;
   }
-  .reasons{
+  .reasons {
     flex-wrap: wrap;
     text-align: center;
   }
-  .why-us-title h3{
+  .why-us-title h3 {
     right: 40%;
     left: 40%;
   }
-  .tab-content{
+  .tab-content {
     grid-template-columns: 1fr;
   }
-  .tab-input select, .tab-input input{
+  .tab-input select,
+  .tab-input input {
     width: 100%;
   }
-  .tab-box-icon{
+  .tab-box-icon {
     justify-content: center;
   }
-  .tab-content:last-of-type{
+  .tab-content:last-of-type {
     display: grid;
     grid-template-columns: 1fr;
   }
-  .rating-box{
+  .rating-box {
     grid-template-columns: 1fr;
-    
   }
-  .comments{
+  .comments {
     font-size: 15px;
     min-width: 400px;
     text-align: justify;
   }
 
-  .rating-person{
+  .rating-person {
     display: flex;
     align-items: center;
     flex-direction: column;
   }
-  .rate{
+  .rate {
     text-align: left;
   }
-  .buy-inner{
+  .buy-inner {
     overflow: hidden;
     height: 440px;
     margin: 30px 0px;
   }
-  .banner-email{
+  .banner-email {
     max-width: 100%;
   }
-  .footer-logo{
+  .footer-logo {
     display: none;
   }
-.footer-links{
-  gap: 10px;
-}
+  .footer-links {
+    gap: 10px;
+  }
   .dashboard {
     grid-template-columns: 1fr;
     width: 100%;
@@ -973,7 +1041,7 @@ CONTACT PAGE STYLING
     width: 100%;
   }
   .pop-up-box {
-    height: 60vh;
+    height: 70vh;
     margin: 20px;
   }
   .rent-heading h4 {

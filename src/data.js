@@ -21,9 +21,11 @@ export const property = [
         "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         "https://www.thespruce.com/thmb/6dA67Z8OKunmeHnLifc6AgzrE4I=/2100x1181/smart/filters:no_upscale()/Basic-Interior-Design-Principles-1-a2141ef720f344b39e82f79b3c9c46ba.jpg",
       ],
+      size: '1256sqft'
     },
     {
       id: 2,
+      size: '1256sqft',
       img: "https://www.wavecity.in/wp-content/uploads/2017/07/shutterstock_297096893.jpg",
       name: "single detached duplex",
       location: "lokogoma",
@@ -67,6 +69,7 @@ export const property = [
         "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         "https://www.thespruce.com/thmb/6dA67Z8OKunmeHnLifc6AgzrE4I=/2100x1181/smart/filters:no_upscale()/Basic-Interior-Design-Principles-1-a2141ef720f344b39e82f79b3c9c46ba.jpg",
       ],
+      size: '1256sqft'
     },
     {
       id: 4,
@@ -90,6 +93,7 @@ export const property = [
         "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         "https://www.thespruce.com/thmb/6dA67Z8OKunmeHnLifc6AgzrE4I=/2100x1181/smart/filters:no_upscale()/Basic-Interior-Design-Principles-1-a2141ef720f344b39e82f79b3c9c46ba.jpg",
       ],
+      size: '1256sqft'
     },
     {
       id: 5,
@@ -113,6 +117,7 @@ export const property = [
         "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         "https://www.thespruce.com/thmb/6dA67Z8OKunmeHnLifc6AgzrE4I=/2100x1181/smart/filters:no_upscale()/Basic-Interior-Design-Principles-1-a2141ef720f344b39e82f79b3c9c46ba.jpg",
       ],
+      size: '1256sqft'
     },
     {
       id: 6,
@@ -136,6 +141,7 @@ export const property = [
         "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         "https://www.thespruce.com/thmb/6dA67Z8OKunmeHnLifc6AgzrE4I=/2100x1181/smart/filters:no_upscale()/Basic-Interior-Design-Principles-1-a2141ef720f344b39e82f79b3c9c46ba.jpg",
       ],
+      size: '1256sqft'
     },
     {
       id: 7,
@@ -159,6 +165,7 @@ export const property = [
         "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         "https://www.thespruce.com/thmb/6dA67Z8OKunmeHnLifc6AgzrE4I=/2100x1181/smart/filters:no_upscale()/Basic-Interior-Design-Principles-1-a2141ef720f344b39e82f79b3c9c46ba.jpg",
       ],
+      size: '1256sqft'
     },
     {
       id: 8,
@@ -182,6 +189,7 @@ export const property = [
         "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         "https://www.thespruce.com/thmb/6dA67Z8OKunmeHnLifc6AgzrE4I=/2100x1181/smart/filters:no_upscale()/Basic-Interior-Design-Principles-1-a2141ef720f344b39e82f79b3c9c46ba.jpg",
       ],
+      size: '1256sqft'
     },
     {
       id: 9,
@@ -205,5 +213,6 @@ export const property = [
         "https://images.unsplash.com/photo-1616046229478-9901c5536a45?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG91c2UlMjBpbnRlcmlvcnxlbnwwfHwwfHw%3D&w=1000&q=80",
         "https://www.thespruce.com/thmb/6dA67Z8OKunmeHnLifc6AgzrE4I=/2100x1181/smart/filters:no_upscale()/Basic-Interior-Design-Principles-1-a2141ef720f344b39e82f79b3c9c46ba.jpg",
       ],
+      size: '1256sqft'
     },
   ];

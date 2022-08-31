@@ -25,13 +25,9 @@ const Navbar = () => {
               ></i>
             </div>
             <div className="topage-link">
-              {/* eslint-disable-next-line */}
               <Link to="/">home</Link>
-              {/* eslint-disable-next-line */}
-              <Link to="/">Products</Link>
-              {/* eslint-disable-next-line */}
+              <Link to="/product">Products</Link>
               <Link to="/">About us</Link>
-              {/* eslint-disable-next-line */}
               <Link to="/contact">Contact</Link>
             </div>
             <div className="login-signup">

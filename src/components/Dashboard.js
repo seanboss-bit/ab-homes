@@ -38,7 +38,7 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
     <div className="dash">
       <div className="p-4">
         <div className="dash-heading">
-          <h2>welcome mr abcde, happy to see you</h2>
+          <h2>welcome mr/mrs abcde, happy to see you</h2>
           <i class="fa-solid fa-bars-staggered" onClick={() => setToggle(!toggle)}></i>
         </div>
         <div className="rented-propeties">

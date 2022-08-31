@@ -38,7 +38,7 @@ const Sidebar = ({ setRent, setBought, setDashboard, toggle, setToggle }) => {
               alt="#"
             />
             <div className="user-name">
-              <p>mr abcde</p>
+              <p>mr/mrs abcde</p>
               <p className="user-email">abcde@gmail.com</p>
             </div>
           </div>
