@@ -27,7 +27,7 @@ const Navbar = () => {
             <div className="topage-link">
               <Link to="/">home</Link>
               <Link to="/product">Products</Link>
-              <Link to="/">About us</Link>
+              <Link to="/aboutus">About us</Link>
               <Link to="/contact">Contact</Link>
             </div>
             <div className="login-signup">

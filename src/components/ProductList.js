@@ -16,7 +16,7 @@ const ProductList = () => {
       <div className="container">
         <div className="product-list-inner">
           {property.map((propert) => (
-            <>
+            <div key={propert.id}>
               <div
                 className="product-list-box"
                 onClick={() => {
@@ -50,7 +50,7 @@ const ProductList = () => {
                   </p>
                 </div>
               </div>
-            </>
+            </div>
           ))}
         </div>
       </div>
@@ -105,7 +105,7 @@ const ProductList = () => {
                 ))}
               </div>
               <div className="property-button">
-                  <button>buy now</button>
+                <button>buy now</button>
               </div>
             </div>
           </motion.div>

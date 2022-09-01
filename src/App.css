@@ -66,14 +66,17 @@ SHOWCASE STYLING
   align-items: center;
   justify-content: center;
   padding: 20px 0px;
+  gap: 50px;
+}
+.solid img {
+  width: 100%;
+  height: 100%;
 }
 .solid {
-  background: url("https://media.architecturaldigest.com/photos/5d77ea32d6d1d60008832cce/master/w_1333,h_2000,c_limit/GettyImages-471443271.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 500px;
   width: 500px;
   border-radius: 26% 44% 12% 36% / 29% 50% 16% 34%;
+  overflow: hidden;
 }
 .showcase-heading {
   color: #4b76e9;
@@ -931,7 +934,115 @@ PRODUCT PAGE
   padding: 10px 0px;
   border-radius: 10px;
 }
+/*=============================
+ABOUT US PAGE
+==============================  */
+.aboutus-section {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 45px;
+  padding: 0px 0px 40px;
+}
+.about-us-pic {
+  position: relative;
+}
+.about-us-pic img {
+  width: 400px;
+  height: 400px;
+  border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+  position: absolute;
+}
+.about-us-pic img:first-child {
+  top: -50px;
+  left: 40%;
+  z-index: 4;
+}
+.about-us-pic img:nth-child(2) {
+  top: -90px;
+  left: -5%;
+}
+.about-us-pic img:last-child {
+  bottom: -300px;
+  right: 10%;
+  z-index: 5;
+}
+.about-inner h1 {
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+.whychooseus {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+.whychooseus h2 {
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+.whychooseusbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+.whychooseusbox i {
+  font-size: 50px;
+  color: #4b76e9;
+  margin-bottom: 15px;
+}
+.whyusname {
+  text-transform: capitalize;
+  margin-bottom: 15px !important;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.whychooseus-slide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+  position: relative;
+  z-index: 8;
+}
 @media screen and (max-width: 768px) {
+  .showcase-heading{
+    text-align: center;
+  }
+  .showcase-text{
+    text-align: justify;
+  }
+  .about-us-text{
+    text-align: justify;
+  }
+  .aboutus-section {
+    grid-template-columns: 1fr;
+  }
+  .about-us-pic img,
+  .about-us-pic img:first-child,
+  .about-us-pic img:nth-child(2),
+  .about-us-pic img:last-child {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    left: 0;
+    width: 350px;
+    height: 350px;
+  }
+  .about-us-pic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .whychooseus-slide {
+    grid-template-columns: 1fr;
+  }
   .product-list-inner {
     grid-template-columns: 1fr;
   }

@@ -6,6 +6,7 @@ import Signin from "./pages/Signin";
 import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
 import Product from "./pages/Product";
+import About from "./pages/About";
 function App() {
   return (
     <Router>
@@ -16,6 +17,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/aboutus" element={<About />} />
       </Routes>
     </Router>
   );
