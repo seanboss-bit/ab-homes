@@ -1,6 +1,6 @@
 export const property = [
     {
-      id: 1,
+      _id: 1,
       img: "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2Fbcd9b316-72dc-11e5-a129-3fcc4f641d98?fit=scale-down&source=next&width=700",
       name: "semi detached duplex",
       location: "guzape",
@@ -24,7 +24,7 @@ export const property = [
       size: '1256sqft'
     },
     {
-      id: 2,
+      _id: 2,
       size: '1256sqft',
       img: "https://www.wavecity.in/wp-content/uploads/2017/07/shutterstock_297096893.jpg",
       name: "single detached duplex",
@@ -48,7 +48,7 @@ export const property = [
       ],
     },
     {
-      id: 3,
+      _id: 3,
       img: "https://c8.alamy.com/comp/R731NX/the-glass-facade-of-residential-apartments-in-a-high-rise-building-windows-and-balconies-in-the-design-of-a-modern-building-R731NX.jpg",
       name: "duplex",
       location: "guzape",
@@ -72,7 +72,7 @@ export const property = [
       size: '1256sqft'
     },
     {
-      id: 4,
+      _id: 4,
       img: "https://media.architecturaldigest.com/photos/56b27847f941be5f7fe132d4/16:9/w_1280,c_limit/singapores-newest-residential-building-features-sky-bridges-unbelieveable-sky-pool-01.png",
       name: "tower plaza",
       location: "sherry hills",
@@ -96,7 +96,7 @@ export const property = [
       size: '1256sqft'
     },
     {
-      id: 5,
+      _id: 5,
       img: "https://images.adsttc.com/media/images/5b76/3ed2/f197/cc5c/2300/0024/newsletter/download.jpg?1534475983",
       name: "commercial building",
       location: "lekki",
@@ -120,7 +120,7 @@ export const property = [
       size: '1256sqft'
     },
     {
-      id: 6,
+      _id: 6,
       img: "https://1.bp.blogspot.com/-dz0AMu4UEEQ/XR3NXCNC0yI/AAAAAAAAAPI/i9eOnLF1QkssHuYiZcrhWl2k2Cwh58n_QCLcBGAs/s16000/Residential%2BBuilding.png",
       name: "block of flat",
       location: "wuse",
@@ -144,7 +144,7 @@ export const property = [
       size: '1256sqft'
     },
     {
-      id: 7,
+      _id: 7,
       img: "https://media.architecturaldigest.com/photos/56b2786df941be5f7fe132d8/master/w_1600%2Cc_limit/singapores-newest-residential-building-features-sky-bridges-unbelieveable-sky-pool-02.jpg",
       name: "seven block flat",
       location: "katampe",
@@ -168,7 +168,7 @@ export const property = [
       size: '1256sqft'
     },
     {
-      id: 8,
+      _id: 8,
       img: "https://api.makemyhouse.com/public/Media/rimage/1024/designers_project/1616132105_187.png?watermark=false",
       name: " detached duplex",
       location: "gwarimpa",
@@ -192,7 +192,7 @@ export const property = [
       size: '1256sqft'
     },
     {
-      id: 9,
+      _id: 9,
       img: "http://www.primareka.com/wp-content/uploads/Paramount-Phase-4a-edited-1920.jpg",
       name: "semi detached duplex with swimming pool",
       location: "guzape",

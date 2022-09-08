@@ -1,6 +1,5 @@
 import React from "react";
 import Banner from "../components/Banner";
-import BuyRent from "../components/BuyRent";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Rating from "../components/Rating";
@@ -17,7 +16,6 @@ const Home = () => {
         img="https://media.architecturaldigest.com/photos/5d77ea32d6d1d60008832cce/master/w_1333,h_2000,c_limit/GettyImages-471443271.jpg"
       />
       <WhyUs />
-      <BuyRent />
       <Rating />
       <Banner />
       <Footer />

@@ -2,6 +2,10 @@
 body {
   font-family: "Roboto Condensed" !important;
 }
+input[type = number]::-webkit-inner-spin-button, input[type = number]::-webkit-outer-spin-button{
+ -webkit-appearance: none;
+ margin: 0;
+}
 .nav-navbar {
   width: 100%;
   background-color: #fff;
@@ -267,6 +271,7 @@ DASHBOARD PAGE
   justify-content: center;
   flex-direction: column;
   padding: 60px 0px;
+  padding-bottom: 0px;
   text-align: center;
 }
 .user-details img {
@@ -924,6 +929,8 @@ PRODUCT PAGE
   align-items: center;
   justify-content: center;
   margin: 20px 0px;
+  gap: 30px;
+  padding: 0px 10px;
 }
 .property-button button {
   border: none;
@@ -1008,14 +1015,152 @@ ABOUT US PAGE
   position: relative;
   z-index: 8;
 }
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px 0px;
+}
+.current-user img{
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/*===============================
+PRODUCT BUY FINAL PAGE  
+=================================*/
+.product-selected{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.product-selected img{
+  height: 400px;
+  width: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.innerbought{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0px;
+  text-align: center;
+}
+.product-select-name{
+  text-transform: capitalize;
+  font-size: 28px;
+  padding: 8px;
+}
+.product-select-price{
+  font-size: 20px;
+}
+.payment{
+  width: 100%;
+  display: flex;
+  align-items: center;justify-content: center;
+  gap: 10px;
+  flex-direction: column-reverse;
+}
+.payment button{
+  width: 50%;
+  text-transform: capitalize;
+  border: none;
+  background: #3f81ca;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 0px;
+  margin: 10px 0px;
+}
+.succes-bought-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  padding: 50px 0px;
+  height: 80vh;
+  font-size: 25px;
+}
+.succes-bought-inner img{
+  width: 150px;
+  height: 150px;
+}
+.succes-bought-inner button{
+  text-transform: capitalize;
+  background: none;
+  border: none;
+  transition: 0.5s all ease-in-out;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.succes-bought-inner button:hover{
+  transition: 0.5s all ease-in-out;
+  text-decoration: underline;
+  color: #0a9143;
+}
+.succes-bought-inner span{
+  color: #0a9143;
+  font-weight: 600;
+}
+.years-pay{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.years-pay p{
+  margin: 0px !important;
+  text-transform: capitalize;
+}
+.years-pay select{
+  padding: 0px 10px;
+}
 @media screen and (max-width: 768px) {
-  .showcase-heading{
+  .succes-bought-inner p{
     text-align: center;
   }
-  .showcase-text{
+  .payment{
+    flex-direction: column;
+  }
+  .innerbought{
+    width: 100%;
+    height: 100vh;
+  }
+  .product-selected img{
+    height: 200px;
+    width: 300px;
+  }
+  .showcase-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pop-up-mainimg{
+    height: 300px;
+  }
+  .pop-up-mainimg img{
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .current-user img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .showcase-heading {
+    text-align: center;
+  }
+  .showcase-text {
     text-align: justify;
   }
-  .about-us-text{
+  .about-us-text {
     text-align: justify;
   }
   .aboutus-section {
@@ -1176,7 +1321,7 @@ ABOUT US PAGE
   }
   .side-main {
     background: #fff;
-    position: absolute;
+    position: fixed;
     width: 100%;
     left: 0%;
     z-index: 2;

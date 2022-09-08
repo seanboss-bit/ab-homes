@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { property } from "../data";
+import { useSelector } from "react-redux";
+
 const PropertyBought = ({ toggle, setToggle }) => {
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  const { currentUser } = useSelector((state) => state.user);
   const [detail, setDetail] = useState(false);
   const [show, setShow] = useState();
   const [query, setQuery] = useState("");
   // eslint-disable-next-line
-  let match = property.find((item) => {
-    if (show === item.id) {
+  let match = currentUser.product[0].bought.find((item) => {
+    if (show === item._id) {
       return item;
     }
   });
@@ -18,10 +23,13 @@ const PropertyBought = ({ toggle, setToggle }) => {
         <div className="rented-propeties">
           <div className="rent-heading mobile">
             <h4>owned properties</h4>
-            <i class="fa-solid fa-bars" onClick={() => setToggle(!toggle)}></i>
+            <i
+              className="fa-solid fa-bars"
+              onClick={() => setToggle(!toggle)}
+            ></i>
           </div>
           <div className="searchbar">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
             <input
               type="text"
               placeholder="Enter which Property You are Looking for By Name Or Location"
@@ -30,7 +38,7 @@ const PropertyBought = ({ toggle, setToggle }) => {
           </div>
           <div className="rent-body">
             {/* eslint-disable-next-line */}
-            {property.filter((propert) => {
+            {currentUser.product[0].bought.filter((propert) => {
                 if (query === "") {
                   return propert;
                 } else if (
@@ -47,19 +55,19 @@ const PropertyBought = ({ toggle, setToggle }) => {
                   className="rent-card"
                   onClick={() => {
                     setDetail(true);
-                    setShow(propert.id);
+                    setShow(propert?._id);
                   }}
                 >
                   <div className="rent-card-img">
-                    <img src={propert.img} alt="#" />
+                    <img src={propert?.img} alt="#" />
                   </div>
                   <div className="rent-word">
-                    <p className="name">{propert.name}</p>
+                    <p className="name">{propert?.name}</p>
                     <p className="location">
-                      loacation: <span>{propert.location}</span>{" "}
+                      loacation: <span>{propert?.location}</span>{" "}
                     </p>
                     <p>
-                      Amount: <span>{propert.amount}</span>
+                      Amount: <span>{numberWithCommas(propert?.amount)}</span>
                     </p>
                   </div>
                 </div>
@@ -93,27 +101,27 @@ const PropertyBought = ({ toggle, setToggle }) => {
           >
             <div>
               <div className="pop-up-mainimg">
-                <img src={match.img} alt="#" />
+                <img src={match?.img} alt="#" />
               </div>
-              <div className="pop-up-name">{match.name}</div>
+              <div className="pop-up-name">{match?.name}</div>
               <div className="pop-details">
                 <p>
-                  <span>{match.type.map((typ) => typ.bed)}</span>
-                  <span>{match.type.map((typ) => typ.toilet)}</span>
-                  <span> {match.price}</span>
+                  <span>{match?.type.map((typ) => typ.bedroom)}</span>
+                  <span>{match?.type.map((typ) => typ.toilet)}</span>
+                  <span> {match?.price}</span>
                 </p>
                 <p>
-                  <i class="fa-solid fa-location-dot"></i>
-                  {match.fullAdress}
+                  <i className="fa-solid fa-location-dot"></i>
+                  {match?.fullAddress}
                 </p>
               </div>
               <div className="pop-up-desc">
                 <h3>Description</h3>
-                {match.desc}
+                {match?.description}
               </div>
               <h3 className="ps-2">Detail</h3>
               <div className="pop-up-slide">
-                {match.det.map((de) => (
+                {match?.interior.map((de) => (
                   <img src={de} alt="#" />
                 ))}
               </div>

@@ -47,7 +47,7 @@ const BuyRent = () => {
             </div>
             <div className="tab-box">
               <div className="tab-box-icon">
-                <i class="fa-solid fa-calendar-days"></i>
+                <i className="fa-solid fa-calendar-days"></i>
                 year built
               </div>
               <div className="tab-input">
@@ -60,15 +60,15 @@ const BuyRent = () => {
             </div>
             <div className="tab-box">
               <div className="tab-box-icon">
-                <i class="fa-solid fa-money-bill"></i>
+                <i className="fa-solid fa-money-bill"></i>
                 price
               </div>
               <div className="tab-input">
-                <input type="text" placeholder="Enter Your Price" />
+                <input type="number" placeholder="Enter Your Price" />
               </div>
             </div>
             <div className="searcbtn">
-              <i class="fa-solid fa-magnifying-glass"></i>
+              <i className="fa-solid fa-magnifying-glass"></i>
             </div>
           </div>
           <div
@@ -78,7 +78,7 @@ const BuyRent = () => {
           >
             <div className="tab-box">
               <div className="tab-box-icon">
-                <i class="fa-solid fa-location-dot"></i>
+                <i className="fa-solid fa-location-dot"></i>
                 location
               </div>
               <div className="tab-input">
@@ -93,7 +93,7 @@ const BuyRent = () => {
             </div>
             <div className="tab-box">
               <div className="tab-box-icon">
-                <i class="fa-solid fa-calendar-days"></i>
+                <i className="fa-solid fa-calendar-days"></i>
                 year built
               </div>
               <div className="tab-input">
@@ -106,7 +106,7 @@ const BuyRent = () => {
             </div>
             <div className="tab-box">
               <div className="tab-box-icon">
-                <i class="fa-solid fa-calendar-days"></i>
+                <i className="fa-solid fa-calendar-days"></i>
                 amount in years
               </div>
               <div className="tab-input">
@@ -120,11 +120,11 @@ const BuyRent = () => {
             </div>
             <div className="tab-box">
               <div className="tab-box-icon">
-                <i class="fa-solid fa-money-bill"></i>
+                <i className="fa-solid fa-money-bill"></i>
                 price
               </div>
               <div className="tab-input">
-                <input type="text" placeholder="Enter Your Price" />
+                <input type="number" placeholder="Enter Your Price" />
               </div>
             </div>
             <div className="searcbtn">

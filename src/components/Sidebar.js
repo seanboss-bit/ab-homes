@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { logout } from "../features/user/userRedux";
+import { done } from "../features/selected";
+import { past } from "../features/year";
 
-const Sidebar = ({ setRent, setBought, setDashboard, toggle, setToggle }) => {
+const Sidebar = ({
+  setRent,
+  setBought,
+  setDashboard,
+  toggle,
+  setToggle,
+  currentUser,
+}) => {
   const [page, setPage] = useState("");
   const changePage = () => {
     if (page === "dashboard") {
@@ -24,7 +35,7 @@ const Sidebar = ({ setRent, setBought, setDashboard, toggle, setToggle }) => {
     changePage();
     // eslint-disable-next-line
   }, [page]);
-
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="container">
@@ -34,12 +45,16 @@ const Sidebar = ({ setRent, setBought, setDashboard, toggle, setToggle }) => {
         <div className="side-nav-inner">
           <div className="user-details">
             <img
-              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80"
+              src={
+                currentUser.img
+                  ? currentUser.img
+                  : "https://www.transparentpng.com/thumb/user/blak-frame-user-profile-png-icon--cupR3D.png"
+              }
               alt="#"
             />
             <div className="user-name">
-              <p>mr/mrs abcde</p>
-              <p className="user-email">abcde@gmail.com</p>
+              <p>mr/mrs {currentUser.name}</p>
+              <p className="user-email">{currentUser.email}</p>
             </div>
           </div>
           <div className="side-nav-links">
@@ -51,9 +66,13 @@ const Sidebar = ({ setRent, setBought, setDashboard, toggle, setToggle }) => {
                 setToggle(!toggle);
               }}
             >
-              <i class="fa-solid fa-building-columns"></i>
+              <i className="fa-solid fa-building-columns"></i>
               dashboard
             </a>
+            <Link to="/product">
+            <i className="fa-solid fa-box"></i>
+            products
+            </Link>
             {/* eslint-disable-next-line */}
             <a
               href="#"
@@ -62,7 +81,7 @@ const Sidebar = ({ setRent, setBought, setDashboard, toggle, setToggle }) => {
                 setToggle(!toggle);
               }}
             >
-              <i class="fa-solid fa-house-chimney-user"></i>
+              <i className="fa-solid fa-house-chimney-user"></i>
               property bought
             </a>
             {/* eslint-disable-next-line */}
@@ -73,19 +92,26 @@ const Sidebar = ({ setRent, setBought, setDashboard, toggle, setToggle }) => {
                 setToggle(!toggle);
               }}
             >
-              <i class="fa-solid fa-arrow-trend-down"></i>
+              <i className="fa-solid fa-arrow-trend-down"></i>
               property on rent
             </a>
             {/* eslint-disable-next-line */}
             <a href="#">
-              <i class="fa-solid fa-circle-question"></i>
+              <i className="fa-solid fa-circle-question"></i>
               help
             </a>
             {/* eslint-disable-next-line */}
-            <Link to="/">
-              <i class="fa-solid fa-right-from-bracket"></i>
+            <a
+              href="#"
+              onClick={() => {
+                dispatch(logout());
+                dispatch(done());
+                dispatch(past());
+              }}
+            >
+              <i className="fa-solid fa-right-from-bracket"></i>
               log out
-            </Link>
+            </a>
           </div>
         </div>
       </div>
