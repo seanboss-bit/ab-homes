@@ -14,13 +14,13 @@ const SuccessRent = () => {
 
   const { years } = useSelector((state) => state.years);
   const { currentUser } = useSelector((state) => state.user);
-  let [amountSent] = useState((select.amount = select.amount / 4));
-  let [amountPaidSent] = useState(
-    (select.amountPaid = select.amount * years)
-  );
+  let amountSent = useState((select.amount = select.amount / 4));
+  let amountPaidSent = useState((select.amountPaid = select.amount * years));
 
   useEffect(() => {
+    // eslint-disable-next-line
     amountSent = select.amount;
+    // eslint-disable-next-line
     amountPaidSent = select.amountPaid;
     const rentProduct = async () => {
       if (currentUser !== null) {

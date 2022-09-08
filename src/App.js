@@ -19,7 +19,6 @@ import Bought from "./pages/Bought";
 import Rent from "./pages/Rent";
 import SuccessBought from "./pages/SuccessBought";
 import SuccessRent from "./pages/SuccessRent";
-import { useState } from "react";
 function App() {
   const { currentUser } = useSelector((state) => state.user);
   return (

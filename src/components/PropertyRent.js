@@ -36,8 +36,7 @@ const PropertyRent = ({ toggle, setToggle }) => {
           </div>
           <div className="rent-body">
             {/*eslint-disable-next-line */}
-            {currentUser.product[0].rent
-              .filter((propert) => {
+            {currentUser.product[0].rent.filter((propert) => {
                 if (query === "") {
                   return propert;
                 } else if (
