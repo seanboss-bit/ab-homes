@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { publicRequest } from "../requestMethods";
 import { logout } from "../features/user/userRedux";
 import { done } from "../features/selected";
-import { toast } from "react-toastify";
 import { past } from "../features/year";
 import { useState } from "react";
 const SuccessRent = () => {
