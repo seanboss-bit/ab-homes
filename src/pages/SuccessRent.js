@@ -14,9 +14,9 @@ const SuccessRent = () => {
 
   const { years } = useSelector((state) => state.years);
   const { currentUser } = useSelector((state) => state.user);
-   // eslint-disable-next-line
+  // eslint-disable-next-line
   let amountSent = useState((select.amount = select.amount / 4));
-   // eslint-disable-next-line
+  // eslint-disable-next-line
   let amountPaidSent = useState((select.amountPaid = select.amount * years));
 
   useEffect(() => {
@@ -25,26 +25,19 @@ const SuccessRent = () => {
     // eslint-disable-next-line
     amountPaidSent = select.amountPaid;
     const rentProduct = async () => {
-      if (currentUser !== null) {
-        try {
-          const res = await publicRequest.put("/users/" + currentUser._id, {
-            product: [
-              {
-                bought: [...currentUser.product[0].bought],
-                rent: [...currentUser.product[0].rent, select],
-              },
-            ],
-          });
-          console.log(res);
-          dispatch(logout());
-        } catch (error) {
-          console.log(error);
-        }
-      } else {
-        toast.error("You Need To Login First");
-        setTimeout(() => {
-          navigate("/login");
-        }, 2000);
+      try {
+        const res = await publicRequest.put("/users/" + currentUser._id, {
+          product: [
+            {
+              bought: [...currentUser.product[0].bought],
+              rent: [...currentUser.product[0].rent, select],
+            },
+          ],
+        });
+        console.log(res);
+        dispatch(logout());
+      } catch (error) {
+        console.log(error);
       }
     };
     const AddOrder = async () => {
