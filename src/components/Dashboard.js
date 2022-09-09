@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
   function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
   const { currentUser } = useSelector((state) => state.user);
   const [detail, setDetail] = useState(false);
