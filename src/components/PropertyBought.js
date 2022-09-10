@@ -16,7 +16,7 @@ const PropertyBought = ({ toggle, setToggle }) => {
       return item;
     }
   });
-
+  const arrayToSort = [...currentUser.product[0].bought].sort((a,b) => a.amount - b.amount)
   return (
     <div>
       <div className="container">
@@ -38,7 +38,7 @@ const PropertyBought = ({ toggle, setToggle }) => {
           </div>
           <div className="rent-body">
             {/* eslint-disable-next-line */}
-            {currentUser.product[0].bought.filter((propert) => {
+            {arrayToSort?.filter((propert) => {
                 if (query === "") {
                   return propert;
                 } else if (

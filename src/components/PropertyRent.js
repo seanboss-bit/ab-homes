@@ -15,6 +15,7 @@ const PropertyRent = ({ toggle, setToggle }) => {
   function numberWithCommas(x) {
     return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  const arrayToSort = [...currentUser.product[0].rent].sort((a,b) => a.amountPaid - b.amountPaid)
   return (
     <div>
       <div className="container">
@@ -36,7 +37,7 @@ const PropertyRent = ({ toggle, setToggle }) => {
           </div>
           <div className="rent-body">
             {/*eslint-disable-next-line */}
-            {currentUser.product[0].rent.filter((propert) => {
+            {arrayToSort.filter((propert) => {
                 if (query === "") {
                   return propert;
                 } else if (

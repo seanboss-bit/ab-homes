@@ -69,42 +69,42 @@ const ProductList = () => {
         <div className="container">
           <div className="product-list-inner">
             {properties?.map((property) => (
-              <div key={property?._id}>
-                <div
-                  className="product-list-box"
-                  onClick={() => {
-                    setDetail(true);
-                    setShow(property?._id);
-                  }}
-                >
-                  <div className="product-img">
-                    <img src={property?.img} alt="#" />
-                  </div>
-                  <div className="product-price-name">
-                    <p>NGN {numberWithCommas(property.amount)}</p>
-                    <p>{property?.name}</p>
-                  </div>
-                  <div className="small-details">
-                    <p>
-                      <i class="fa-solid fa-location-dot"></i>
-                      {property?.fullAddress}
-                    </p>
-                    <p>
-                      <i class="bi bi-arrows-angle-expand"></i>
-                      {property?.size} sqft
-                    </p>
-                    <p>
-                      <i class="fa-solid fa-bath"></i>
-                      {property?.type.map((typ) => typ.toilet)}
-                    </p>
-                    <p>
-                      <i class="fa-solid fa-bed"></i>
-                      {property?.type.map((typ) => typ.bedroom)}
-                    </p>
+                <div key={property?._id}>
+                  <div
+                    className="product-list-box"
+                    onClick={() => {
+                      setDetail(true);
+                      setShow(property?._id);
+                    }}
+                  >
+                    <div className="product-img">
+                      <img src={property?.img} alt="#" />
+                    </div>
+                    <div className="product-price-name">
+                      <p>NGN {numberWithCommas(property.amount)}</p>
+                      <p>{property?.name}</p>
+                    </div>
+                    <div className="small-details">
+                      <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        {property?.fullAddress}
+                      </p>
+                      <p>
+                        <i class="bi bi-arrows-angle-expand"></i>
+                        {property?.size} sqft
+                      </p>
+                      <p>
+                        <i class="fa-solid fa-bath"></i>
+                        {property?.type.map((typ) => typ.toilet)}
+                      </p>
+                      <p>
+                        <i class="fa-solid fa-bed"></i>
+                        {property?.type.map((typ) => typ.bedroom)}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       )}

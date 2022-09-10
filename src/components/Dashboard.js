@@ -46,7 +46,8 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
         return item;
       }
     });
-
+    const arrayToSortB = [...currentUser.product[0].bought]?.sort((a,b) => a.amount - b.amount)
+    const arrayToSortR = [...currentUser.product[0].rent]?.sort((a,b) => a.amountPaid - b.amountPaid)
   return (
     <div className="dash">
       <div className="p-4">
@@ -71,7 +72,7 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
             </a>
           </div>
           <div className="rent-body">
-            {currentUser.product[0].rent?.slice(0, 4)?.map((propert) => (
+            {arrayToSortR?.slice(0, 4)?.map((propert) => (
               <div
                 className="rent-card"
                 onClick={() => {
@@ -121,7 +122,7 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
             </a>
           </div>
           <div className="rent-body">
-            {currentUser?.product[0].bought?.slice(0, 4)?.map((propert) => (
+            {arrayToSortB?.slice(0, 4)?.map((propert) => (
               <div
                 className="rent-card"
                 onClick={() => {
