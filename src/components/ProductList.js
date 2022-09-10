@@ -24,6 +24,24 @@ const ProductList = () => {
       return item;
     }
   });
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      y: 400,
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { ease: [0.6, 0.01, -0.05, 0.95], duration: 2 },
+    },
+  };
 
   const buyProduct = async () => {
     if (currentUser === null) {
@@ -67,45 +85,51 @@ const ProductList = () => {
         <Loader />
       ) : (
         <div className="container">
-          <div className="product-list-inner">
+          <motion.div
+            className="product-list-inner"
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
             {properties?.map((property) => (
-                <div key={property?._id}>
-                  <div
-                    className="product-list-box"
-                    onClick={() => {
-                      setDetail(true);
-                      setShow(property?._id);
-                    }}
-                  >
-                    <div className="product-img">
-                      <img src={property?.img} alt="#" />
-                    </div>
-                    <div className="product-price-name">
-                      <p>NGN {numberWithCommas(property.amount)}</p>
-                      <p>{property?.name}</p>
-                    </div>
-                    <div className="small-details">
-                      <p>
-                        <i class="fa-solid fa-location-dot"></i>
-                        {property?.fullAddress}
-                      </p>
-                      <p>
-                        <i class="bi bi-arrows-angle-expand"></i>
-                        {property?.size} sqft
-                      </p>
-                      <p>
-                        <i class="fa-solid fa-bath"></i>
-                        {property?.type.map((typ) => typ.toilet)}
-                      </p>
-                      <p>
-                        <i class="fa-solid fa-bed"></i>
-                        {property?.type.map((typ) => typ.bedroom)}
-                      </p>
-                    </div>
+              <div key={property?._id}>
+                <motion.div
+                  className="product-list-box"
+                  onClick={() => {
+                    setDetail(true);
+                    setShow(property?._id);
+                  }}
+                  variants={item}
+                >
+                  <div className="product-img">
+                    <img src={property?.img} alt="#" />
                   </div>
-                </div>
-              ))}
-          </div>
+                  <div className="product-price-name">
+                    <p>NGN {numberWithCommas(property.amount)}</p>
+                    <p>{property?.name}</p>
+                  </div>
+                  <div className="small-details">
+                    <p>
+                      <i class="fa-solid fa-location-dot"></i>
+                      {property?.fullAddress}
+                    </p>
+                    <p>
+                      <i class="bi bi-arrows-angle-expand"></i>
+                      {property?.size} sqft
+                    </p>
+                    <p>
+                      <i class="fa-solid fa-bath"></i>
+                      {property?.type.map((typ) => typ.toilet)}
+                    </p>
+                    <p>
+                      <i class="fa-solid fa-bed"></i>
+                      {property?.type.map((typ) => typ.bedroom)}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       )}
       {detail && (

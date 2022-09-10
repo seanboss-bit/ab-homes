@@ -1,7 +1,24 @@
+import { motion } from "framer-motion";
 import React from "react";
 import Showcase from "./Showcase";
 
 const AboutPage = () => {
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      scale: 0,
+    },
+    show: {
+      scale: 1,
+      transition: { ease: [0.6, 0.01, -0.05, 0.95], duration: 2, type: "spring" },
+    },
+  };
   return (
     <div>
       <Showcase
@@ -43,15 +60,19 @@ const AboutPage = () => {
               />
             </div>
           </div>
-          <div className="messageCEO"></div>
           <div className="whychooseus">
             <h2>why choose us?</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque,
               ad.
             </p>
-            <div className="whychooseus-slide">
-              <div className="whychooseusbox">
+            <motion.div
+              className="whychooseus-slide"
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+            >
+              <motion.div className="whychooseusbox" variants={item}>
                 <i className="fa-solid fa-wallet"></i>
                 <p className="whyusname">flexible payment plans</p>
                 <p>
@@ -59,8 +80,8 @@ const AboutPage = () => {
                   Dolorum omnis commodi aperiam sit harum expedita quis eius,
                   libero similique ut.
                 </p>
-              </div>
-              <div className="whychooseusbox">
+              </motion.div>
+              <motion.div className="whychooseusbox" variants={item}>
                 <i className="fa-regular fa-handshake"></i>
                 <p className="whyusname">premium infastructure</p>
                 <p>
@@ -68,8 +89,8 @@ const AboutPage = () => {
                   Dolorum omnis commodi aperiam sit harum expedita quis eius,
                   libero similique ut.
                 </p>
-              </div>
-              <div className="whychooseusbox">
+              </motion.div>
+              <motion.div className="whychooseusbox" variants={item}>
                 <i className="fa-solid fa-key"></i>
                 <p className="whyusname">insurance</p>
                 <p>
@@ -77,8 +98,8 @@ const AboutPage = () => {
                   Dolorum omnis commodi aperiam sit harum expedita quis eius,
                   libero similique ut.
                 </p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
           <div className="mission-vision"></div>
         </div>

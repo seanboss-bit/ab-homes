@@ -12,10 +12,28 @@ const PropertyRent = ({ toggle, setToggle }) => {
       return item;
     }
   });
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      scale: 0,
+    },
+    show: {
+      scale: 1,
+      transition: { ease: [0.6, 0.01, -0.05, 0.95], duration: .5 },
+    },
+  };
   function numberWithCommas(x) {
     return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  const arrayToSort = [...currentUser.product[0].rent].sort((a,b) => a.amountPaid - b.amountPaid)
+  const arrayToSort = [...currentUser.product[0].rent].sort(
+    (a, b) => a.amountPaid - b.amountPaid
+  );
   return (
     <div>
       <div className="container">
@@ -35,9 +53,14 @@ const PropertyRent = ({ toggle, setToggle }) => {
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
-          <div className="rent-body">
+          <motion.div
+            className="rent-body"
+            initial="hidden"
+            animate="show"
+            variants={container}
+          >
             {/*eslint-disable-next-line */}
-            {arrayToSort.filter((propert) => {
+            {arrayToSort?.filter((propert) => {
                 if (query === "") {
                   return propert;
                 } else if (
@@ -50,7 +73,8 @@ const PropertyRent = ({ toggle, setToggle }) => {
                 }
               })
               .map((propert) => (
-                <div
+                <motion.div
+                  variants={item}
                   className="rent-card"
                   onClick={() => {
                     setDetail(true);
@@ -86,9 +110,9 @@ const PropertyRent = ({ toggle, setToggle }) => {
                       </span>
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-          </div>
+          </motion.div>
         </div>
       </div>
       {detail && (

@@ -6,6 +6,22 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
   function numberWithCommas(x) {
     return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+     scale: 0
+    },
+    show: {
+      scale: 1,
+      transition: { ease: [0.6, 0.01, -0.05, 0.95], duration: 2 },
+    },
+  };
   const { currentUser } = useSelector((state) => state.user);
   const [detail, setDetail] = useState(false);
   const [show, setShow] = useState();
@@ -46,8 +62,12 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
         return item;
       }
     });
-    const arrayToSortB = [...currentUser.product[0].bought]?.sort((a,b) => a.amount - b.amount)
-    const arrayToSortR = [...currentUser.product[0].rent]?.sort((a,b) => a.amountPaid - b.amountPaid)
+  const arrayToSortB = [...currentUser.product[0].bought]?.sort(
+    (a, b) => a.amount - b.amount
+  );
+  const arrayToSortR = [...currentUser.product[0].rent]?.sort(
+    (a, b) => a.amountPaid - b.amountPaid
+  );
   return (
     <div className="dash">
       <div className="p-4">
@@ -71,9 +91,15 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
               <i className="fa-solid fa-arrow-right"></i>
             </a>
           </div>
-          <div className="rent-body">
+          <motion.div
+            className="rent-body"
+            initial="hidden"
+            variants={container}
+            animate="show"
+          >
             {arrayToSortR?.slice(0, 4)?.map((propert) => (
-              <div
+              <motion.div
+                variants={item}
                 className="rent-card"
                 onClick={() => {
                   setDetail(true);
@@ -99,14 +125,20 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
                   <p>
                     Amount Due:{" "}
                     <span>
-                      {propert?.amountPaid >= 0 ? `You have paid to occupy here for ${propert?.amountPaid / propert?.amount} years` : numberWithCommas(propert?.amount - propert?.amountPaid)}
+                      {propert?.amountPaid >= 0
+                        ? `You have paid to occupy here for ${
+                            propert?.amountPaid / propert?.amount
+                          } years`
+                        : numberWithCommas(
+                            propert?.amount - propert?.amountPaid
+                          )}
                       {/* {} */}
                     </span>
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
         <div className="rented-propeties">
           <div className="rent-heading">
@@ -121,15 +153,21 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
               <i className="fa-solid fa-arrow-right"></i>
             </a>
           </div>
-          <div className="rent-body">
+          <motion.div
+            className="rent-body"
+            initial="hidden"
+            animate="show"
+            variants={container}
+          >
             {arrayToSortB?.slice(0, 4)?.map((propert) => (
-              <div
+              <motion.div
                 className="rent-card"
                 onClick={() => {
                   setDetail(true);
                   setShow(propert?._id);
                 }}
                 key={propert?._id}
+                variants={item}
               >
                 <div className="rent-card-img">
                   <img src={propert?.img} alt="#" />
@@ -143,9 +181,9 @@ const Dashboard = ({ toggle, setToggle, setRent, setBought, setDashboard }) => {
                     Amount: <span>{numberWithCommas(propert?.amount)}</span>
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
       {detail && (

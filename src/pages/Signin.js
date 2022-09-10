@@ -6,8 +6,31 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from "../components/Loader";
 import { publicRequest } from "../requestMethods";
 import { RegisterSuccess } from "../features/user/userRedux";
+import { motion } from "framer-motion";
 
 const Signin = () => {
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      y: -100,
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 1,
+        type: "spring",
+      },
+    },
+  };
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +38,7 @@ const Signin = () => {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  const {currentUser} = useSelector(state => state.user)
+  const { currentUser } = useSelector((state) => state.user);
 
   const registerUser = async () => {
     setLoading(true);
@@ -41,17 +64,17 @@ const Signin = () => {
   };
 
   useEffect(() => {
-    if(currentUser){
-      navigate('/dashboard')
+    if (currentUser) {
+      navigate("/dashboard");
     }
     //eslint-disable-next-line
   }, [currentUser]);
   return (
     <div className="login">
-      <div class="box">
-        <div class="wave -one"></div>
-        <div class="wave -two"></div>
-        <div class="wave -three"></div>
+      <div className="box">
+        <div className="wave -one"></div>
+        <div className="wave -two"></div>
+        <div className="wave -three"></div>
       </div>
       {loading ? (
         <Loader />
@@ -70,54 +93,57 @@ const Signin = () => {
               </p>
             </div>
             <div className="login-form">
-              <form
+              <motion.form
+                initial="hidden"
+                animate="show"
+                variants={container}
                 onSubmit={(e) => {
                   e.preventDefault();
                   registerUser();
                 }}
               >
-                <div className="details">
+                <motion.div className="details" variants={item}>
                   <i className="fa-solid fa-user"></i>
                   <input
                     type="text"
                     placeholder="Enter Full Name"
                     onChange={(e) => setName(e.target.value)}
                   />
-                </div>
-                <div className="details">
+                </motion.div>
+                <motion.div className="details" variants={item}>
                   <i className="fa-solid fa-envelope"></i>
                   <input
                     type="email"
                     placeholder="Enter Email"
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                </div>
-                <div className="details">
+                </motion.div>
+                <motion.div className="details" variants={item}>
                   <i className="fa-solid fa-phone"></i>
                   <input
                     type="text"
                     placeholder="Enter Phone Number"
                     onChange={(e) => setPhone(e.target.value)}
                   />
-                </div>
-                <div className="details">
+                </motion.div>
+                <motion.div className="details" variants={item}>
                   <i className="fa-solid fa-lock"></i>
                   <input
                     type="password"
                     placeholder="Enter Password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                </div>
-                <div className="forget-remeber">
+                </motion.div>
+                <motion.div className="forget-remeber" variants={item}>
                   <div className="login-box">
                     <input type="checkbox" />i agree with TERMS and POLICIES
                   </div>
-                </div>
-                <input type="submit" value="Sign In" className="form-btn" />
-                <p className="not-member">
+                </motion.div>
+                <motion.input variants={item} type="submit" value="Sign In" className="form-btn" />
+                <motion.p className="not-member" variants={item}>
                   already a member? <Link to="/login">Login</Link>
-                </p>
-              </form>
+                </motion.p>
+              </motion.form>
             </div>
           </div>
         </div>

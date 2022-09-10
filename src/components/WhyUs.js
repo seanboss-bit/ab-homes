@@ -1,8 +1,14 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const WhyUs = () => {
   return (
-    <div className="whyus">
+    <motion.div
+      className="whyus"
+      initial={{ opacity: 0, scale: 0 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1 }}
+    >
       <div className="container">
         <div className="why-us-inner">
           <div className="why-us-title">
@@ -36,7 +42,7 @@ const WhyUs = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

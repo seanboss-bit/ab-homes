@@ -6,6 +6,22 @@ const PropertyBought = ({ toggle, setToggle }) => {
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      scale: 0,
+    },
+    show: {
+      scale: 1,
+      transition: { ease: [0.6, 0.01, -0.05, 0.95], duration: 1 },
+    },
+  };
   const { currentUser } = useSelector((state) => state.user);
   const [detail, setDetail] = useState(false);
   const [show, setShow] = useState();
@@ -16,7 +32,9 @@ const PropertyBought = ({ toggle, setToggle }) => {
       return item;
     }
   });
-  const arrayToSort = [...currentUser.product[0].bought].sort((a,b) => a.amount - b.amount)
+  const arrayToSort = [...currentUser.product[0].bought].sort(
+    (a, b) => a.amount - b.amount
+  );
   return (
     <div>
       <div className="container">
@@ -36,7 +54,12 @@ const PropertyBought = ({ toggle, setToggle }) => {
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
-          <div className="rent-body">
+          <motion.div
+            className="rent-body"
+            initial="hidden"
+            animate="show"
+            variants={container}
+          >
             {/* eslint-disable-next-line */}
             {arrayToSort?.filter((propert) => {
                 if (query === "") {
@@ -51,7 +74,8 @@ const PropertyBought = ({ toggle, setToggle }) => {
                 }
               })
               .map((propert) => (
-                <div
+                <motion.div
+                  variants={item}
                   className="rent-card"
                   onClick={() => {
                     setDetail(true);
@@ -70,9 +94,9 @@ const PropertyBought = ({ toggle, setToggle }) => {
                       Amount: <span>{numberWithCommas(propert?.amount)}</span>
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
-          </div>
+          </motion.div>
         </div>
       </div>
       {detail && (

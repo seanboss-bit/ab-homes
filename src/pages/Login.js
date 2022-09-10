@@ -6,8 +6,31 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
+import { motion } from "framer-motion";
 
 const Login = () => {
+  const container = {
+    show: {
+      transition: {
+        staggerChildren: 0.35,
+      },
+    },
+  };
+  const item = {
+    hidden: {
+      y: -100,
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        ease: [0.6, 0.01, -0.05, 0.95],
+        duration: 2,
+        type: "spring",
+      },
+    },
+  };
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const { currentUser, isLoading, error } = useSelector((state) => state?.user);
@@ -55,51 +78,64 @@ const Login = () => {
               </p>
             </div>
             <div className="login-form">
-              <form
+              <motion.form
                 onSubmit={(e) => {
                   e.preventDefault();
                   submit();
                 }}
+                variants={container}
+                initial="hidden"
+                animate="show"
               >
-                <div className="details">
+                <motion.div className="details" variants={item}>
                   <i className="fa-solid fa-envelope"></i>
                   <input
                     type="email"
                     placeholder="Enter Email"
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                </div>
-                <div className="details">
+                </motion.div>
+                <motion.div className="details" variants={item}>
                   <i className="fa-solid fa-lock"></i>
                   <input
                     type="password"
                     placeholder="Enter Password"
                     onChange={(e) => setPassword(e.target.value)}
                   />
-                </div>
-                <div className="forget-remeber">
+                </motion.div>
+                <motion.div className="forget-remeber" variants={item}>
                   <div className="login-box">
                     <input type="checkbox" />
                     Remember me
                   </div>
                   {/* eslint-disable-next-line */}
                   <a href="#">forgot password</a>
-                </div>
-                <input type="submit" value="Log in" className="form-btn" />
-                <p className="not-member">
+                </motion.div>
+                <motion.input
+                  type="submit"
+                  value="Log in"
+                  className="form-btn"
+                  variants={item}
+                />
+                <motion.p className="not-member" variants={item}>
                   not a member yet? <Link to="/signin">Sign Up</Link>
-                </p>
-              </form>
+                </motion.p>
+              </motion.form>
             </div>
           </div>
         </div>
       )}
-      <div className="login-screen">
+      <motion.div
+        className="login-screen"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: "easeIn", duration: 1 }}
+      >
         <img
           src="https://media.wired.com/photos/5932213dedfced5820d0eb60/master/w_1600%2Cc_limit/overall_vert.jpg"
           alt="#"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
