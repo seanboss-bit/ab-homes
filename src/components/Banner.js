@@ -7,9 +7,9 @@ const Banner = () => {
       <div className="container">
         <motion.div
           className="banner-inner"
-          initial={{ x: -600, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ease: [0.6, 0.01, -0.05, 0.95]}}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ease: [0.6, 0.01, -0.05, 0.95], duration: 1}}
         >
           <div className="banner-heading">
             <p>you did not find the house you were looking for?</p>
