@@ -54,6 +54,10 @@ const Signin = () => {
           phone: phone,
         });
         dispatch(RegisterSuccess(res.data.data));
+        if(res){
+          setLoading(false)
+        }
+        console.log(res);
       } catch (error) {
         setTimeout(() => {
           setLoading(false);
@@ -64,8 +68,10 @@ const Signin = () => {
   };
 
   useEffect(() => {
-    if (currentUser) {
+    if (currentUser?.isVerified) {
       navigate("/dashboard");
+    }else{
+      console.log('nope not allowed')
     }
     //eslint-disable-next-line
   }, [currentUser]);

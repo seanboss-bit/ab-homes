@@ -19,33 +19,37 @@ import Bought from "./pages/Bought";
 import Rent from "./pages/Rent";
 import SuccessBought from "./pages/SuccessBought";
 import SuccessRent from "./pages/SuccessRent";
+import Verify from "./pages/Verify";
 function App() {
   const { currentUser } = useSelector((state) => state.user);
   return (
     <Router>
       <ToastContainer />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/" exact element={<Home />} />
+        <Route path="/login" exact element={<Login />} />
+        <Route path="/signin" exact element={<Signin />} />
         <Route
           path="/dashboard"
-          element={currentUser === null ? <Navigate to="/" /> : <Dashboard />}
+          element={
+            currentUser === null ||
+            currentUser.isVerified === false ||
+            currentUser.message === "A Confirmation Email Has Been Sent!!!" ? (
+              <Navigate to="/" />
+            ) : (
+              <Dashboard />
+            )
+          }
         />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/aboutus" element={<About />} />
-        <Route path="/laoder" element={<Loader />} />
-        <Route path="/productbuy" element={<Bought />} />
-        <Route path="/successbought" element={<SuccessBought />} />
-        <Route
-          path="/successrent"
-          element={<SuccessRent />}
-        />
-        <Route
-          path="/productrent"
-          element={<Rent  />}
-        />
+        <Route path="/contact" exact element={<Contact />} />
+        <Route path="/product" exact element={<Product />} />
+        <Route path="/aboutus" exact element={<About />} />
+        <Route path="/laoder" exact element={<Loader />} />
+        <Route path="/productbuy" exact element={<Bought />} />
+        <Route path="/successbought" exact element={<SuccessBought />} />
+        <Route path="/successrent" exact element={<SuccessRent />} />
+        <Route path="/productrent" exact element={<Rent />} />
+        <Route path="/confirm/:id/:token" exact element={<Verify />} />
       </Routes>
     </Router>
   );

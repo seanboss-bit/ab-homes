@@ -32,7 +32,8 @@ const Navbar = () => {
               <Link to="/aboutus">About us</Link>
               <Link to="/contact">Contact</Link>
             </div>
-            {currentUser === null ? (
+            {currentUser === null ||
+            currentUser.message === "A Confirmation Email Has Been Sent!!!" ? (
               <div className="login-signup">
                 <Link to="/login">Log in</Link>
                 <Link to="/signin" className="sign-btn">

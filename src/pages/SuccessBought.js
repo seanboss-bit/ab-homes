@@ -38,6 +38,7 @@ const SuccessBought = () => {
           amount: select.amount,
           amountPaid: select.amount,
           img: select.img,
+          userImg: currentUser.img
         });
       } catch (error) {
         console.log(error);

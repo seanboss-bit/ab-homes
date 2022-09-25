@@ -25,6 +25,7 @@ const SuccessRent = () => {
     amountPaidSent = select.amountPaid;
     const rentProduct = async () => {
       try {
+        // eslint-disable-next-line
         const res = await publicRequest.put("/users/" + currentUser._id, {
           product: [
             {
@@ -33,7 +34,6 @@ const SuccessRent = () => {
             },
           ],
         });
-        console.log(res);
         dispatch(logout());
       } catch (error) {
         console.log(error);
@@ -50,6 +50,7 @@ const SuccessRent = () => {
           amount: select.amount / 4,
           amountPaid: select.amountPaid,
           img: select.img,
+          userImg: currentUser.img
         });
       } catch (error) {
         console.log(error);

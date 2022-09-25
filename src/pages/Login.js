@@ -47,9 +47,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (error) {
-      toast.error("Wrong Email or Password");
-    } else if (currentUser) {
+    if (currentUser?.isVerified) {
       navigate("/dashboard");
     }
     // eslint-disable-next-line
