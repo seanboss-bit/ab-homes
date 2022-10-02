@@ -47,7 +47,7 @@ const SuccessRent = () => {
           nameOfProductBought: select.name,
           bought: false,
           rent: true,
-          amount: select.amount / 4,
+          amount: select.amount,
           amountPaid: select.amountPaid,
           img: select.img,
           userImg: currentUser.img
